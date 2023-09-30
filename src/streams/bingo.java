@@ -24,6 +24,10 @@ public class bingo {
         for (int i=0;i< 15; i++){
             System.out.println(bingoPool.get(i));
         }
+        System.out.println("===========================================");
+
+        List<String> firstOnes = bingoPool.subList(0,15);
+
 
     }
 }
