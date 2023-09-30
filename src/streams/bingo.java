@@ -35,12 +35,26 @@ public class bingo {
             if(s.indexOf('G') == 0 || s.indexOf('O') == 0){
                 //String updated =  s.charAt(0)+"-"+s.substring(1);
                 //return updated;
+                System.out.print(s.charAt(0)+"-"+s.substring(1)+" ");
                 return s.charAt(0)+"-"+s.substring(1);
             }
             return s;
         });
-        System.out.println(firstOnes);
+        System.out.println("\n"+firstOnes);
         System.out.println("===========================================");
+        for (int i=0;i< 15; i++){
+            System.out.println(bingoPool.get(i));
+        }
+        System.out.println("===========================================");
+        System.out.println("Realizando el mismo ejemplo pero utilizando Stream");
+        bingoPool.stream()
+                 .limit(15)
+                 .filter(s -> s.indexOf('G') ==0 || s.indexOf('O') == 0)
+                 .map(s -> s.charAt(0)+"-"+s.substring(1))
+                 .sorted()
+                 .forEach(s -> System.out.print(s+" "));
+        //System.out.println(firstOnes);
+        System.out.println("\n===========================================");
         for (int i=0;i< 15; i++){
             System.out.println(bingoPool.get(i));
         }
