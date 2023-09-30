@@ -2,6 +2,7 @@ package streams;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class bingo {
@@ -27,7 +28,19 @@ public class bingo {
         System.out.println("===========================================");
 
         List<String> firstOnes = bingoPool.subList(0,15);
-
-
+        firstOnes.sort(Comparator.naturalOrder());
+        System.out.println(firstOnes);
+        firstOnes.replaceAll(s->{
+            if(s.indexOf('G') == 0 || s.indexOf('O') == 0){
+                String updated =  s.charAt(0)+"-"+s.substring(1);
+                return updated;
+            }
+            return s;
+        });
+        System.out.println(firstOnes);
+        System.out.println("===========================================");
+        for (int i=0;i< 15; i++){
+            System.out.println(bingoPool.get(i));
+        }
     }
 }
