@@ -27,7 +27,8 @@ public class bingo {
         }
         System.out.println("===========================================");
 
-        List<String> firstOnes = bingoPool.subList(0,15);
+        //List<String> firstOnes = bingoPool.subList(0,15);
+        List<String> firstOnes = new ArrayList<>(bingoPool.subList(0,15));
         firstOnes.sort(Comparator.naturalOrder());
         System.out.println(firstOnes);
         firstOnes.replaceAll(s->{
