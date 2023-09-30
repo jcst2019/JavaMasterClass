@@ -1,6 +1,7 @@
 package streams;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class bingo {
@@ -17,6 +18,11 @@ public class bingo {
             }
             start += 15;
 
+        }
+        // Baragear los números
+        Collections.shuffle(bingoPool);
+        for (int i=0;i< 15; i++){
+            System.out.println(bingoPool.get(i));
         }
 
     }
