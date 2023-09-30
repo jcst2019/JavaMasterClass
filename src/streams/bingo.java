@@ -32,8 +32,9 @@ public class bingo {
         System.out.println(firstOnes);
         firstOnes.replaceAll(s->{
             if(s.indexOf('G') == 0 || s.indexOf('O') == 0){
-                String updated =  s.charAt(0)+"-"+s.substring(1);
-                return updated;
+                //String updated =  s.charAt(0)+"-"+s.substring(1);
+                //return updated;
+                return s.charAt(0)+"-"+s.substring(1);
             }
             return s;
         });
